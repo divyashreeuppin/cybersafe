@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberSafe - Cybersecurity Quiz</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>🛡️ CyberSafe</h1>
+        <p>Test Your Cybersecurity Knowledge</p>
+    </header>
+
+    <main class="quiz-container">
+        <h2>Cybersecurity Awareness Quiz</h2>
+
+        <div id="quiz">
+            <h3 id="question">Loading question...</h3>
+            <div id="options"></div>
+            <button id="nextBtn" onclick="nextQuestion()">Next Question</button>
+        </div>
+
+        <div id="result" class="hidden">
+            <h2>Quiz Completed!</h2>
+            <h3 id="score"></h3>
+            <button onclick="restartQuiz()">Try Again</button>
+        </div>
+    </main>
+
+    <footer>
+        <p>Stay Alert. Stay Safe Online! 🔐</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
