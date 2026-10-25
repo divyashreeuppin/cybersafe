@@ -10,27 +10,89 @@
 
     <header>
         <h1>🛡️ CyberSafe</h1>
-        <p>Test Your Cybersecurity Knowledge</p>
+        <p>Test Your Cybersecurity Knowledge!</p>
     </header>
 
-    <main class="quiz-container">
-        <h2>Cybersecurity Awareness Quiz</h2>
+    <main class="container">
 
-        <div id="quiz">
-            <h3 id="question">Loading question...</h3>
+        <!-- Difficulty Selection -->
+        <section id="startScreen" class="card">
+            <h2>Welcome to CyberSafe!</h2>
+            <p>Select your difficulty level to start the quiz.</p>
+
+            <input type="text" id="playerName"
+                   placeholder="Enter your name" maxlength="20">
+
+            <div class="levels">
+                <button class="level easy" onclick="startQuiz('Easy')">
+                    Easy
+                </button>
+
+                <button class="level medium" onclick="startQuiz('Medium')">
+                    Medium
+                </button>
+
+                <button class="level hard" onclick="startQuiz('Hard')">
+                    Hard
+                </button>
+            </div>
+        </section>
+
+        <!-- Quiz Screen -->
+        <section id="quizScreen" class="card hidden">
+
+            <div class="quiz-info">
+                <span id="levelDisplay">Level: Easy</span>
+                <span id="timer">⏱️ 60 seconds</span>
+            </div>
+
+            <p id="progress">Question 1</p>
+
+            <h2 id="question">Loading question...</h2>
+
             <div id="options"></div>
-            <button id="nextBtn" onclick="nextQuestion()">Next Question</button>
-        </div>
 
-        <div id="result" class="hidden">
-            <h2>Quiz Completed!</h2>
+            <button id="nextBtn" onclick="nextQuestion()" disabled>
+                Next Question →
+            </button>
+
+        </section>
+
+        <!-- Result Screen -->
+        <section id="resultScreen" class="card hidden">
+            <h2>🎉 Quiz Completed!</h2>
+
             <h3 id="score"></h3>
-            <button onclick="restartQuiz()">Try Again</button>
-        </div>
+            <p id="resultMessage"></p>
+
+            <button onclick="showLeaderboard()">
+                View Leaderboard
+            </button>
+
+            <button class="secondary" onclick="restartQuiz()">
+                Try Again
+            </button>
+        </section>
+
+        <!-- Leaderboard -->
+        <section id="leaderboardScreen" class="card hidden">
+            <h2>🏆 CyberSafe Leaderboard</h2>
+
+            <div id="leaderboardList"></div>
+
+            <button onclick="restartQuiz()">
+                Play Again
+            </button>
+
+            <button class="secondary" onclick="goHome()">
+                Home
+            </button>
+        </section>
+
     </main>
 
     <footer>
-        <p>Stay Alert. Stay Safe Online! 🔐</p>
+        <p>© 2026 CyberSafe | Stay Safe, Stay Secure 🔐</p>
     </footer>
 
     <script src="script.js"></script>
